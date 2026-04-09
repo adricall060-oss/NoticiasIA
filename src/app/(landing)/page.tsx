@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -8,7 +9,9 @@ export default function Page() {
 
       <div className="mx-auto max-w-3xl px-4 py-10">
 
-        <RegisteredSuccessCard />
+        <Suspense fallback={null}>
+          <RegisteredSuccessCard />
+        </Suspense>
         
         <Card className="bg-gradient-to-l from-[#F2F2F2] to-white p-10 text-center shadow-xl border-slate-400/30">
           <img

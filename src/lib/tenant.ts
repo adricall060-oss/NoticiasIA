@@ -1,4 +1,5 @@
 import { db } from "@/lib/db";
+import type { RowDataPacket } from "mysql2/promise";
 
 export type ClienteInfo = {
   id_cliente: number;
@@ -6,7 +7,7 @@ export type ClienteInfo = {
   codigo: string;
 };
 
-type ClienteRow = {
+type ClienteRow = RowDataPacket & {
   id_cliente: number;
   nombre: string;
   codigo: string;
